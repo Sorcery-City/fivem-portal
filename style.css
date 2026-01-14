@@ -312,3 +312,5 @@ footer .container { display:flex; justify-content: space-between; align-items:ce
   .join-grid { grid-template-columns: 1fr; }
   footer .container { flex-direction: column; }
 }
+/* ✅ CSSが読み込まれてたら、アイコンが赤枠になる */
+.icon-link { outline: 2px solid red !important; }
