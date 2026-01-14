@@ -10,6 +10,9 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
+  <!-- アイコン（Font Awesome） -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -267,7 +270,37 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
     footer .container { display:flex; justify-content: space-between; align-items:center; flex-wrap:wrap; gap: 12px; }
-    footer ul { list-style:none; display:flex; gap: 14px; }
+
+    /* ===== フッターのアイコンリンク ===== */
+    .footer-icons{
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .icon-link{
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(20, 24, 40, 0.35);
+      backdrop-filter: blur(10px);
+
+      color: rgba(220, 230, 255, 0.9);
+      text-decoration: none;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+    .icon-link i{ font-size: 18px; }
+    .icon-link:hover{
+      transform: translateY(-2px);
+      background: rgba(120, 110, 255, 0.18);
+      border-color: rgba(160, 150, 255, 0.35);
+      box-shadow: 0 10px 26px rgba(102,126,234,0.16);
+    }
 
     /* モバイル */
     @media (max-width: 860px) {
@@ -453,12 +486,12 @@
     <section class="section">
       <div class="container">
         <h2 class="reveal">参加方法</h2>
-        <p class="sub reveal">3ステップでOK。初めてでも迷わないようにしてある。</p>
+        <p class="sub reveal">3ステップでOK。</p>
 
         <div class="join-grid">
           <div class="card glass reveal">
             <h3>① Discordに参加</h3>
-            <p>サーバールールと参加手順を確認。質問もここで。</p>
+            <p>サーバールール、参加手順の確認並びにDiscordのロール取得。質問もここで。</p>
             <div style="margin-top:14px;">
               <a class="btn-primary" href="https://discord.gg/NGGmYqYsX9" target="_blank" rel="noopener" onclick="trackOutbound('discord');">Discordに参加</a>
             </div>
@@ -476,8 +509,8 @@
               </div>
 
               <div class="copybox">
-                <div style="font-weight:900;">IP:PORT</div>
-                <code id="serverIp">160.251.230.198:30120</code>
+                <div style="font-weight:900;">IPで接続.</div>
+                <code id="serverIp">>160.251.230.198</code>
                 <button class="btn-secondary" type="button" onclick="copyText('serverIp')">コピー</button>
               </div>
             </div>
@@ -487,12 +520,11 @@
         <div class="card glass reveal" style="margin-top:18px;">
           <h3>③ 初期設定（推奨）</h3>
           <p style="color:#b0b0b0;">
-            ・マイク/音量を調整　・プッシュトゥトーク設定　・Discordのロール取得（必要なら）<br>
+            ・マイク/音量を調整　・プッシュトゥトーク設定　<br>
             ・キャラ作成 → チュートリアル → 生活スタート
           </p>
           <div style="margin-top:14px;">
             <a class="btn-primary" href="https://cfx.re/join/zxxxmd" onclick="trackOutbound('fivem');">今すぐ接続</a>
-            <a class="btn-secondary" href="#contact" onclick="navigateTo('contact'); return false;" style="margin-left:10px;">運営に問い合わせ</a>
           </div>
         </div>
       </div>
@@ -522,14 +554,40 @@
     </section>
   </div>
 
+  <!-- ===== footer（アイコン版） ===== -->
   <footer>
     <div class="container">
       <div>&copy; 2026 Sorcery City. All rights reserved.</div>
-      <ul>
-        <li><a href="#rules" onclick="navigateTo('rules'); return false;">ルール</a></li>
-        <li><a href="#join" onclick="navigateTo('join'); return false;">参加方法</a></li>
-        <li><a href="#contact" onclick="navigateTo('contact'); return false;">問い合わせ</a></li>
-      </ul>
+
+      <div class="footer-icons">
+        <!-- Discord -->
+        <a class="icon-link" href="https://discord.gg/NGGmYqYsX9" target="_blank" rel="noopener"
+           onclick="trackOutbound('discord');" aria-label="Discord">
+          <i class="fa-brands fa-discord"></i>
+        </a>
+
+        <!-- YouTube（自分のURLに差し替え） -->
+        <a class="icon-link" href="https://www.youtube.com/" target="_blank" rel="noopener"
+           onclick="trackOutbound('youtube');" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <!-- X（自分のURLに差し替え） -->
+        <a class="icon-link" href="https://x.com/" target="_blank" rel="noopener"
+           onclick="trackOutbound('x');" aria-label="X">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <!-- ルール（ページ内） -->
+        <a class="icon-link" href="#rules" onclick="navigateTo('rules'); return false;" aria-label="ルール">
+          <i class="fa-solid fa-scroll"></i>
+        </a>
+
+        <!-- 参加方法（ページ内） -->
+        <a class="icon-link" href="#join" onclick="navigateTo('join'); return false;" aria-label="参加方法">
+          <i class="fa-solid fa-right-to-bracket"></i>
+        </a>
+      </div>
     </div>
   </footer>
 
