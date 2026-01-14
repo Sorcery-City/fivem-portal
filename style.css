@@ -282,22 +282,27 @@ footer .container { display:flex; justify-content: space-between; align-items:ce
 
 /* ===== 1回だけ回転して揺れるアニメ ===== */
 @keyframes iconWiggleOnce {
-  0%   { transform: translateY(-2px) rotate(0deg); }
-  20%  { transform: translateY(-2px) rotate(-10deg); }
-  40%  { transform: translateY(-2px) rotate(10deg); }
-  60%  { transform: translateY(-2px) rotate(-6deg); }
-  80%  { transform: translateY(-2px) rotate(6deg); }
-  100% { transform: translateY(-2px) rotate(0deg); }
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(-10deg); }
+  40%  { transform: rotate(10deg); }
+  60%  { transform: rotate(-6deg); }
+  80%  { transform: rotate(6deg); }
+  100% { transform: rotate(0deg); }
 }
 
+/* 親は浮かすだけ */
 .icon-link:hover{
+  transform: translateY(-2px);
   background: rgba(120, 110, 255, 0.18);
   border-color: rgba(160, 150, 255, 0.35);
   box-shadow: 0 10px 26px rgba(102,126,234,0.16);
+}
 
-  /* hover時に“1回だけ”再生 */
+/* 回転は中のアイコンだけ */
+.icon-link:hover i{
   animation: iconWiggleOnce 420ms ease-out 1;
 }
+
 
 /* モバイル */
 @media (max-width: 860px) {
