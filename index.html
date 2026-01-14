@@ -334,7 +334,7 @@
 
           <div class="statrow">
             <div class="stat">
-              <div class="k">オンライン</div>
+              <div class="k">サーバーステータス</div>
               <div class="v" id="statOnline">—</div>
             </div>
             <div class="stat">
@@ -343,7 +343,7 @@
             </div>
             <div class="stat">
               <div class="k">おすすめ時間帯</div>
-              <div class="v">21:00〜</div>
+              <div class="v">21:00〜01:00</div>
             </div>
             <div class="stat">
               <div class="k">サーバーIP</div>
@@ -678,17 +678,46 @@
     // サーバーステータス（デモ表示）
     // ここはあとで実データに置き換え可能
     // =========================
-    (function demoStatus() {
-      const onlineEl = document.getElementById('statOnline');
-      const playersEl = document.getElementById('statPlayers');
-      if (!onlineEl || !playersEl) return;
+    // ===== サーバーステータス（実データ）=====
+// ここを自分のサーバーIDに変える（例: "4lqxao"）
+const SERVER_CODE = "zxxxmd";
 
-      // デモ：ランダム表示
-      const online = true;
-      const players = Math.floor(12 + Math.random() * 34);
-      onlineEl.textContent = online ? 'ONLINE' : 'OFFLINE';
-      playersEl.textContent = online ? `${players} / 64` : '—';
-    })();
+// 何秒ごとに更新するか
+const REFRESH_MS = 30000;
+
+async function fetchServerStatus() {
+  const onlineEl = document.getElementById('statOnline');
+  const playersEl = document.getElementById('statPlayers');
+
+  if (!onlineEl || !playersEl) return;
+
+  try {
+    const url = `https://servers-frontend.fivem.net/api/servers/single/${encodeURIComponent(SERVER_CODE)}`;
+    const res = await fetch(url, { cache: "no-store" });
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const json = await res.json();
+
+    // 返り値は { EndPoint, Data } 形式が多い
+    const data = json.Data || json.data || json;
+
+    // clients = 現在人数, sv_maxclients = 最大人数（環境で名前が違うことも）
+    const clients = data.clients ?? data.Clients ?? 0;
+    const max = data.sv_maxclients ?? data.svMaxclients ?? data.maxClients ?? 0;
+
+    onlineEl.textContent = "ONLINE";
+    playersEl.textContent = max ? `${clients} / ${max}` : `${clients}`;
+
+  } catch (err) {
+    // 取れなかったらOFFLINE扱い（ネットワーク/非公開/一時エラーなど）
+    onlineEl.textContent = "OFFLINE";
+    playersEl.textContent = "—";
+  }
+}
+
+fetchServerStatus();
+setInterval(fetchServerStatus, REFRESH_MS);
   </script>
 </body>
 </html>
