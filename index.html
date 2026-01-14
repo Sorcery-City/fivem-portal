@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sorcery City | Cosmic Portal</title>
+
+  <!-- キャッシュ対策（GitHub Pagesで更新が見えない問題の軽減） -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -97,7 +103,7 @@
     }
     nav .container { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
     nav .logo { font-size: 1.1rem; font-weight: 900; color: #fff; letter-spacing: .6px; }
-    nav ul { list-style: none; display: flex; gap: 18px; align-items: center; }
+    nav ul { list-style: none; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; justify-content: center; }
     nav ul li a.link { font-weight: 700; opacity: .92; }
     nav ul li a.link:hover { opacity: 1; }
     nav .cta { margin-left: 6px; }
@@ -158,7 +164,7 @@
       background: rgba(0,0,0,0.20);
     }
     .stat .k { font-size: .85rem; color: #b9b9d8; font-weight: 800; }
-    .stat .v { font-size: 1.05rem; font-weight: 900; margin-top: 4px; color:#fff; }
+    .stat .v { font-size: 1.05rem; font-weight: 900; margin-top: 4px; color:#fff; word-break: break-word; }
 
     /* セクション共通 */
     .section { padding: 85px 0; }
@@ -263,26 +269,24 @@
     footer .container { display:flex; justify-content: space-between; align-items:center; flex-wrap:wrap; gap: 12px; }
     footer ul { list-style:none; display:flex; gap: 14px; }
 
-    /* モバイル：メニューを隠さない（クリックできない問題対策） */
+    /* モバイル */
     @media (max-width: 860px) {
       #hero .container { grid-template-columns: 1fr; text-align: center; }
       #hero h1 { font-size: 2.45rem; }
-      nav ul { gap: 12px; flex-wrap: wrap; justify-content: center; }
       nav .container { flex-direction: column; }
       .join-grid { grid-template-columns: 1fr; }
       footer .container { flex-direction: column; }
     }
   </style>
 </head>
+
 <body>
   <canvas class="starfield" id="starfield"></canvas>
 
   <nav>
     <div class="container">
       <div class="logo">
-        <a href="#home" onclick="navigateTo('home'); return false;" style="color:#fff;">
-          Sorcery City
-        </a>
+        <a href="#home" onclick="navigateTo('home'); return false;" style="color:#fff;">Sorcery City</a>
       </div>
 
       <ul>
@@ -290,12 +294,8 @@
         <li><a class="link" href="#features" onclick="navigateTo('features'); return false;">特徴</a></li>
         <li><a class="link" href="#rules" onclick="navigateTo('rules'); return false;">ルール</a></li>
         <li><a class="link" href="#join" onclick="navigateTo('join'); return false;">参加方法</a></li>
-        <li><a class="link" href="#contact" onclick="navigateTo('contact'); return false;">問い合わせ</a></li>
-
-        <!-- FiveM用：aタグにして確実にクリックできるように -->
         <li class="cta">
-          <a class="btn-primary" href="https://cfx.re/join/zxxxmd"
-             onclick="trackOutbound('fivem');">
+          <a class="btn-primary" href="https://cfx.re/join/zxxxmd" onclick="trackOutbound('fivem');">
             FiveMで接続
           </a>
         </li>
@@ -316,21 +316,17 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn-primary" href="https://cfx.re/join/zxxxmd" onclick="trackOutbound('fivem');">
-              FiveMで接続
-            </a>
+            <a class="btn-primary" href="https://cfx.re/join/zxxxmd" onclick="trackOutbound('fivem');">FiveMで接続</a>
             <a class="btn-secondary" href="https://discord.gg/NGGmYqYsX9" target="_blank" rel="noopener" onclick="trackOutbound('discord');">
               Discordに参加
             </a>
-            <a class="btn-secondary" href="#join" onclick="navigateTo('join'); return false;">
-              参加方法を見る
-            </a>
+            <a class="btn-secondary" href="#join" onclick="navigateTo('join'); return false;">参加方法を見る</a>
           </div>
         </div>
 
         <div class="mock-device glass floating reveal">
           <h3>サーバーステータス</h3>
-          <p style="color:#b0b0b0;">※デモ表示（必要なら実データ連携も可能）</p>
+          <p style="color:#b0b0b0;"></p>
 
           <div class="statrow">
             <div class="stat">
@@ -342,12 +338,20 @@
               <div class="v" id="statPlayers">—</div>
             </div>
             <div class="stat">
+              <div class="k">最終更新</div>
+              <div class="v" id="statUpdated">—</div>
+            </div>
+            <div class="stat">
+              <div class="k">取得状態</div>
+              <div class="v" id="statNote">—</div>
+            </div>
+            <div class="stat">
               <div class="k">おすすめ時間帯</div>
               <div class="v">21:00〜01:00</div>
             </div>
             <div class="stat">
-              <div class="k">サーバーIP</div>
-              <div class="v" style="font-size:1rem;">>160.251.230.198</div>
+              <div class="k">サーバーIP:PORT</div>
+              <div class="v" style="font-size:1rem;">160.251.230.198:30120</div>
             </div>
           </div>
 
@@ -365,9 +369,7 @@
     <section class="section">
       <div class="container">
         <h2 class="reveal">特徴</h2>
-        <p class="sub reveal">
-          “魔法都市”らしさと、RPの遊びやすさを両立。初心者も慣れてる人も楽しめる設計。
-        </p>
+        <p class="sub reveal">“魔法都市”らしさと、RPの遊びやすさを両立。初心者も慣れてる人も楽しめる設計。</p>
 
         <div class="grid">
           <div class="card glass reveal">
@@ -404,9 +406,7 @@
         </div>
 
         <div style="text-align:center; margin-top: 26px;" class="reveal">
-          <a class="btn-primary" href="https://cfx.re/join/zxxxmd" onclick="trackOutbound('fivem');">
-            FiveMで接続する
-          </a>
+          <a class="btn-primary" href="https://cfx.re/join/zxxxmd" onclick="trackOutbound('fivem');">FiveMで接続する</a>
           <a class="btn-secondary" href="https://discord.gg/NGGmYqYsX9" target="_blank" rel="noopener" onclick="trackOutbound('discord');" style="margin-left:10px;">
             Discordで質問する
           </a>
@@ -442,9 +442,7 @@
         </div>
 
         <div style="text-align:center; margin-top: 26px;" class="reveal">
-          <a class="btn-secondary" href="https://discord.gg/NGGmYqYsX9" target="_blank" rel="noopener" onclick="trackOutbound('discord');">
-            Discordでルールを見る
-          </a>
+          <a class="btn-secondary" href="https://discord.gg/NGGmYqYsX9" target="_blank" rel="noopener" onclick="trackOutbound('discord');">Discordでルールを見る</a>
         </div>
       </div>
     </section>
@@ -479,7 +477,7 @@
 
               <div class="copybox">
                 <div style="font-weight:900;">IP:PORT</div>
-                <code id="serverIp">>160.251.230.198</code>
+                <code id="serverIp">160.251.230.198:30120</code>
                 <button class="btn-secondary" type="button" onclick="copyText('serverIp')">コピー</button>
               </div>
             </div>
@@ -594,13 +592,9 @@
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       target.classList.add('active');
 
-      // URLハッシュ更新
       history.replaceState(null, '', `#${pageId}`);
-
-      // 先頭へ
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // リビール再実行
       requestAnimationFrame(() => runReveal(true));
     }
 
@@ -670,54 +664,68 @@
     // 外部リンクのクリック計測（デモ）
     // =========================
     function trackOutbound(type) {
-      // 必要ならここで analytics / console.log など
       // console.log('Outbound:', type);
     }
 
     // =========================
-    // サーバーステータス（デモ表示）
-    // ここはあとで実データに置き換え可能
+    // FiveM サーバーステータス（リアタイ風）
     // =========================
-    // ===== サーバーステータス（実データ）=====
-// ここを自分のサーバーIDに変える（例: "4lqxao"）
-const SERVER_CODE = "zxxxmd";
+    const SERVER_CODE = "zxxxmd";
+    const REFRESH_MS = 7000;
+    let timer = null;
 
-// 何秒ごとに更新するか
-const REFRESH_MS = 30000;
+    function setText(id, text) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = text;
+    }
 
-async function fetchServerStatus() {
-  const onlineEl = document.getElementById('statOnline');
-  const playersEl = document.getElementById('statPlayers');
+    function nowTime() {
+      const d = new Date();
+      return d.toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
 
-  if (!onlineEl || !playersEl) return;
+    async function fetchServerStatus() {
+      if (fetchServerStatus._busy) return;
+      fetchServerStatus._busy = true;
 
-  try {
-    const url = `https://servers-frontend.fivem.net/api/servers/single/${encodeURIComponent(SERVER_CODE)}`;
-    const res = await fetch(url, { cache: "no-store" });
+      try {
+        const url = `https://servers-frontend.fivem.net/api/servers/single/${encodeURIComponent(SERVER_CODE)}`;
+        const res = await fetch(url, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        const data = json.Data || json.data || json;
 
-    const json = await res.json();
+        const clients = data.clients ?? data.Clients;
+        const max = data.sv_maxclients ?? data.svMaxclients ?? data.maxClients;
 
-    // 返り値は { EndPoint, Data } 形式が多い
-    const data = json.Data || json.data || json;
+        setText('statOnline', 'ONLINE');
+        setText('statPlayers', (clients != null && max != null) ? `${clients} / ${max}` : (clients != null ? `${clients}` : '—'));
+        setText('statUpdated', nowTime());
+        setText('statNote', '正常に取得中');
 
-    // clients = 現在人数, sv_maxclients = 最大人数（環境で名前が違うことも）
-    const clients = data.clients ?? data.Clients ?? 0;
-    const max = data.sv_maxclients ?? data.svMaxclients ?? data.maxClients ?? 0;
+      } catch (err) {
+        setText('statOnline', '—');
+        setText('statPlayers', '—');
+        setText('statUpdated', nowTime());
+        setText('statNote', `取得失敗（${String(err.message || err)}）`);
+      } finally {
+        fetchServerStatus._busy = false;
+      }
+    }
 
-    onlineEl.textContent = "ONLINE";
-    playersEl.textContent = max ? `${clients} / ${max}` : `${clients}`;
+    fetchServerStatus();
+    timer = setInterval(fetchServerStatus, REFRESH_MS);
 
-  } catch (err) {
-    // 取れなかったらOFFLINE扱い（ネットワーク/非公開/一時エラーなど）
-    onlineEl.textContent = "OFFLINE";
-    playersEl.textContent = "—";
-  }
-}
-
-fetchServerStatus();
-setInterval(fetchServerStatus, REFRESH_MS);
+    document.addEventListener('visibilitychange', () => {
+      if (timer) clearInterval(timer);
+      if (document.hidden) {
+        timer = setInterval(fetchServerStatus, 20000);
+      } else {
+        fetchServerStatus();
+        timer = setInterval(fetchServerStatus, REFRESH_MS);
+      }
+    });
   </script>
 </body>
 </html>
