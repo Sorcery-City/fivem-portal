@@ -331,7 +331,7 @@
         <li><a class="link" href="#guide" onclick="navigateTo('guide'); return false;">はじめて</a></li>
         <li><a class="link" href="#media" onclick="navigateTo('media'); return false;">ギャラリー</a></li>
         <li><a class="link" href="#staff" onclick="navigateTo('staff'); return false;">運営紹介</a></li>
-        <li><a class="link" href="#soragra" onclick="navigateTo('soragra'); return false;">ソラグラ</a></li>
+        <li><a class="link" href="#soragra" onclick="navigateTo('soragra'); return false;">ソラグラ RP</a></li>
    <!-- 将来用 -->
    <!-- <li><a class="link" href="#events" onclick="navigateTo('events'); return false;">イベント</a></li> -->
 
@@ -723,21 +723,23 @@
 <div id="soragra" class="page">
   <section class="section">
     <div class="container">
-      <h2 class="reveal">ソラグラ</h2>
-      <p class="sub reveal">Sorcery City のパートナーサーバー。別の街、別の物語。</p>
+      <img class="reveal soragra-title-img"
+           src="assets/soragra/ソラグラ.png"
+           alt="ソラグラ RP">
+      <p class="sub reveal"></p>
 
-      <div class="grid">
+      <div class="grid soragra-grid">
+
 
         <!-- 紹介カード -->
         <div class="card glass reveal full-width">
           <div class="icon"><i class="fa-solid fa-city"></i></div>
-          <h3>ソラグラとは</h3>
+          <h3>ソラグラ RPとは</h3>
           <p>
-            ソラグラは、独自の世界観とRPスタイルを持つパートナーサーバーです。<br>
-            Sorcery City と連携し、イベント交流や合同企画なども予定しています。
+            <br>
           </p>
           <p style="color:#b0b0b0; margin-top:8px;">
-            「別の街でも物語を体験したい」「新しいRPの舞台を探している」人におすすめ。
+          
           </p>
         </div>
 
@@ -750,13 +752,13 @@
           <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
             <!-- Discord -->
             <a class="btn-primary"
-               href="https://discord.gg/XXXXXXX"
+               href="https://discord.gg/gnTZsnWU8U"
                target="_blank" rel="noopener"
                onclick="trackOutbound('soragra-discord');">
               <i class="fa-brands fa-discord"></i> Discordに参加
             </a>
 
-            <!-- 公式サイト（あれば） -->
+            <!-- 公式サイト（あれば）
             <a class="btn-secondary"
                href="https://example.com"
                target="_blank" rel="noopener"
@@ -764,7 +766,7 @@
               <i class="fa-solid fa-globe"></i> 公式サイト
             </a>
           </div>
-        </div>
+        </div> -->
 
         <!-- YouTube -->
         <div class="card glass reveal">
@@ -772,11 +774,11 @@
           <h3>公式YouTube</h3>
           <p>トレーラー、イベント映像、街の雰囲気を動画でチェック。</p>
           <div style="margin-top:12px;">
-            <a class="btn-secondary"
-               href="https://www.youtube.com/@Soragra"
+            <a class="btn-primary"
+               href="https://www.youtube.com/@soragura-gta"
                target="_blank" rel="noopener"
                onclick="trackOutbound('soragra-youtube');">
-              YouTubeを見る
+              <i class="fa-brands fa-youtube"></i> YouTubeを見る
             </a>
           </div>
         </div>
@@ -787,11 +789,11 @@
           <h3>SNS / 最新情報</h3>
           <p>イベント告知・メンテ情報・日常の街の様子を発信中。</p>
           <div style="margin-top:12px;">
-            <a class="btn-secondary"
-               href="https://x.com/soragra"
+            <a class="btn-primary"
+               href="https://x.com/shushuserver"
                target="_blank" rel="noopener"
                onclick="trackOutbound('soragra-x');">
-              X（旧Twitter）
+              <i class="fa-brands fa-x-twitter"></i> X（旧Twitter）
             </a>
           </div>
         </div>
