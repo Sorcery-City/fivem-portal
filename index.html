@@ -328,6 +328,13 @@
         <li><a class="link" href="#features" onclick="navigateTo('features'); return false;">特徴</a></li>
         <li><a class="link" href="#rules" onclick="navigateTo('rules'); return false;">ルール</a></li>
         <li><a class="link" href="#join" onclick="navigateTo('join'); return false;">参加方法</a></li>
+        <li><a class="link" href="#guide" onclick="navigateTo('guide'); return false;">はじめて</a></li>
+        <li><a class="link" href="#media" onclick="navigateTo('media'); return false;">ギャラリー</a></li>
+        <li><a class="link" href="#staff" onclick="navigateTo('staff'); return false;">運営紹介</a></li>
+        <li><a class="link" href="#soragra" onclick="navigateTo('soragra'); return false;">ソラグラ</a></li>
+   <!-- 将来用 -->
+   <!-- <li><a class="link" href="#events" onclick="navigateTo('events'); return false;">イベント</a></li> -->
+
         <li class="cta">
           <a class="btn-primary" href="https://cfx.re/join/zxxxmd" onclick="trackOutbound('fivem');">
             FiveMで接続
@@ -531,6 +538,268 @@
       </div>
     </section>
   </div>
+
+  <!-- GUIDE -->
+<div id="guide" class="page">
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">はじめての人向けガイド</h2>
+      <p class="sub reveal">初見でも迷わないように、最短ルートで“街”へ案内します。</p>
+
+      <div class="grid">
+        <div class="card glass reveal">
+          <div class="icon"><i class="fa-solid fa-user-plus"></i></div>
+          <h3>1) Discordで参加</h3>
+          <p>参加前にルールサイトを確認して、Discordで案内に沿ってロールを取得します。</p>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn-secondary" href="https://sorcery-city.gitbook.io/sorcery-city/" target="_blank" rel="noopener" onclick="trackOutbound('rules');">ルールサイト</a>
+            <a class="btn-secondary" href="https://discord.gg/NGGmYqYsX9" target="_blank" rel="noopener" onclick="trackOutbound('discord');">Discord</a>
+          </div>
+        </div>
+
+        <div class="card glass reveal">
+          <div class="icon"><i class="fa-solid fa-plug"></i></div>
+          <h3>2) FiveMで接続</h3>
+          <p>FiveMを起動して接続リンクから参加。初回は読み込みに少し時間がかかります。</p>
+          <div style="margin-top:12px;">
+            <a class="btn-primary" href="https://cfx.re/join/zxxxmd" onclick="trackOutbound('fivem');">FiveMで接続</a>
+          </div>
+        </div>
+
+        <div class="card glass reveal">
+          <div class="icon"><i class="fa-solid fa-wand-sparkles"></i></div>
+          <h3>3) キャラ作成＆チュートリアル</h3>
+          <p>キャラ作成 → チュートリアル → 生活スタート。困ったら街の中で</p>
+        </div>
+
+        <div class="card glass reveal">
+          <div class="icon"><i class="fa-solid fa-circle-question"></i></div>
+          <h3>よくある質問</h3>
+          <p><b>Q.</b> RP初心者でも大丈夫？<br>→ 大丈夫。案内とサポートあります。</p>
+          <p style="margin-top:8px;"><b>Q.</b> VCは必要？<br>→ 基本はVC推奨（Discordで案内）。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- MEDIA -->
+<div id="media" class="page">
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">プレイ動画 / スクショ紹介</h2>
+      <p class="sub reveal">雰囲気が一番伝わる場所。街の“空気”を見てください。</p>
+
+      <div class="grid">
+        <!-- 動画：YouTube埋め込み（URL差し替え） -->
+        <div class="card glass reveal" style="padding:18px;">
+          <h3 style="margin-top:0;">紹介動画</h3>
+          <div style="position:relative; padding-top:56.25%; border-radius:12px; overflow:hidden; margin-top:12px; border:1px solid rgba(255,255,255,.10);">
+            <iframe
+              src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+              title="Sorcery City - Trailer"
+              style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p style="color:#b0b0b0; margin-top:10px;">※ VIDEO_ID_HERE を自分のYouTube動画IDに差し替え</p>
+        </div>
+        <!-- スクショ：画像ファイルに差し替え -->
+        <div class="card glass reveal" style="padding:18px;">
+          <h3 style="margin-top:0;">スクショギャラリー</h3>
+
+          <div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:12px; margin-top:12px;">
+            <a href="assets/ss1.png" target="_blank" rel="noopener" style="border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04); display:block;">
+              <img src="assets/ss1.png" alt="Sorcery City Screenshot 1" style="width:100%; height:160px; object-fit:cover; display:block;">
+            </a>
+            <a href="assets/ss2.png" target="_blank" rel="noopener" style="border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04); display:block;">
+              <img src="assets/ss2.png" alt="Sorcery City Screenshot 2" style="width:100%; height:160px; object-fit:cover; display:block;">
+            </a>
+            <a href="assets/ss3.png" target="_blank" rel="noopener" style="border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04); display:block;">
+              <img src="assets/ss3.png" alt="Sorcery City Screenshot 3" style="width:100%; height:160px; object-fit:cover; display:block;">
+            </a>
+            <a href="assets/ss4.png" target="_blank" rel="noopener" style="border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04); display:block;">
+              <img src="assets/ss4.png" alt="Sorcery City Screenshot 4" style="width:100%; height:160px; object-fit:cover; display:block;">
+            </a>
+          </div>
+
+          <p style="color:#b0b0b0; margin-top:10px;">※ assets/ss1.png などを自分の画像に差し替え（GitHub Pagesなら assets フォルダ推奨）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+       <!-- STAFF -->
+<div id="staff" class="page">
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">スタッフ・運営紹介</h2>
+      <p class="sub reveal">安心して遊べるように。困ったら運営へ。</p>
+
+      <div class="grid staff-grid">
+
+        <!-- 1) 山田 -->
+        <div class="card glass reveal staff-card">
+          <img class="staff-photo" src="assets/staff/山田.png" alt="山田山田">
+          <h3 class="staff-name">山田山田</h3>
+          <div class="staff-role">街全般の管理</div>
+          <p class="staff-desc">トラブル対応、ルール案内、初心者サポート</p>
+          <p class="staff-note">対応時間：午前2:00~午前10:00以降 / Discordで受付</p>
+        </div>
+
+        <!-- 2) かもねぎ -->
+        <div class="card glass reveal staff-card">
+          <img class="staff-photo" src="assets/staff/かもねぎ.png" alt="かもねぎ">
+          <h3 class="staff-name">かもねぎ</h3>
+          <div class="staff-role">プログラマー兼サポーター</div>
+          <p class="staff-desc">プログラミングを担当</p>
+          <p class="staff-note">対応時間：午前2:00~午前10:00以降 / Discordで受付</p>
+        </div>
+
+        <!-- 3) 田中 -->
+        <div class="card glass reveal staff-card">
+          <img class="staff-photo" src="assets/staff/田中.png" alt="田中">
+          <h3 class="staff-name">田中田中</h3>
+          <div class="staff-role">イベント / RPサポート</div>
+          <p class="staff-desc">イベント進行、ストーリーRP、撮影などを担当。</p>
+          <p class="staff-note">対応時間：午前2:00~午前10:00以降 / Discordで受付</p>
+        </div>
+
+        <!-- 4) たけのこ -->
+        <div class="card glass reveal staff-card">
+          <img class="staff-photo" src="assets/staff/たけのこ.png" alt="たけのこ">
+          <h3 class="staff-name">たけのこ</h3>
+          <div class="staff-role">問い合わせ窓口</div>
+          <p class="staff-desc">最短はDiscord。ログ・スクショがあると対応が早いです。</p>
+          <p class="staff-note">対応時間：午前2:00~午前10:00以降 / Discordで受付</p>
+        </div>
+
+        <!-- 5) くまくん -->
+        <div class="card glass reveal staff-card">
+          <img class="staff-photo" src="assets/staff/くまくん.png" alt="くまくん">
+          <h3 class="staff-name">くまくん</h3>
+          <div class="staff-role">サポーター兼テストプレイヤー</div>
+          <p class="staff-desc">サーバーの色々な面をサポート</p>
+          <p class="staff-note">対応時間：午前2:00~午前10:00以降 / Discordで受付</p>
+        </div>
+
+        <!-- 6) shu -->
+        <div class="card glass reveal staff-card">
+          <img class="staff-photo" src="assets/staff/shushu.png" alt="shushu">
+          <h3 class="staff-name">shushu</h3>
+          <div class="staff-role">パートナーサーバー先オーナー</div>
+          <p class="staff-desc">サーバーのBOTなどの技術的な面でサポート</p>
+          <p class="staff-note">対応時間：午前2:00~午前10:00以降 / Discordで受付</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- EVENTS（将来） -->
+<div id="events" class="page">
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">イベント予定・アーカイブ</h2>
+      <p class="sub reveal">開催予定と、過去イベントの記録。</p>
+
+      <div class="grid">
+        <div class="card glass reveal">
+          <h3>近日開催</h3>
+          <p style="color:#b0b0b0;">（例）毎週〇曜 21:00〜 / Discordで告知</p>
+        </div>
+        <div class="card glass reveal">
+          <h3>アーカイブ</h3>
+          <p style="color:#b0b0b0;">スクショや短いまとめを掲載。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- SORAGRA (Partner Server) -->
+<div id="soragra" class="page">
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">ソラグラ</h2>
+      <p class="sub reveal">Sorcery City のパートナーサーバー。別の街、別の物語。</p>
+
+      <div class="grid">
+
+        <!-- 紹介カード -->
+        <div class="card glass reveal full-width">
+          <div class="icon"><i class="fa-solid fa-city"></i></div>
+          <h3>ソラグラとは</h3>
+          <p>
+            ソラグラは、独自の世界観とRPスタイルを持つパートナーサーバーです。<br>
+            Sorcery City と連携し、イベント交流や合同企画なども予定しています。
+          </p>
+          <p style="color:#b0b0b0; margin-top:8px;">
+            「別の街でも物語を体験したい」「新しいRPの舞台を探している」人におすすめ。
+          </p>
+        </div>
+
+        <!-- 参加・リンク -->
+        <div class="card glass reveal">
+          <div class="icon"><i class="fa-solid fa-right-to-bracket"></i></div>
+          <h3>参加・公式リンク</h3>
+          <p>最新情報・参加方法・告知は公式リンクから。</p>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <!-- Discord -->
+            <a class="btn-primary"
+               href="https://discord.gg/XXXXXXX"
+               target="_blank" rel="noopener"
+               onclick="trackOutbound('soragra-discord');">
+              <i class="fa-brands fa-discord"></i> Discordに参加
+            </a>
+
+            <!-- 公式サイト（あれば） -->
+            <a class="btn-secondary"
+               href="https://example.com"
+               target="_blank" rel="noopener"
+               onclick="trackOutbound('soragra-site');">
+              <i class="fa-solid fa-globe"></i> 公式サイト
+            </a>
+          </div>
+        </div>
+
+        <!-- YouTube -->
+        <div class="card glass reveal">
+          <div class="icon"><i class="fa-brands fa-youtube"></i></div>
+          <h3>公式YouTube</h3>
+          <p>トレーラー、イベント映像、街の雰囲気を動画でチェック。</p>
+          <div style="margin-top:12px;">
+            <a class="btn-secondary"
+               href="https://www.youtube.com/@Soragra"
+               target="_blank" rel="noopener"
+               onclick="trackOutbound('soragra-youtube');">
+              YouTubeを見る
+            </a>
+          </div>
+        </div>
+
+        <!-- X / SNS -->
+        <div class="card glass reveal">
+          <div class="icon"><i class="fa-brands fa-x-twitter"></i></div>
+          <h3>SNS / 最新情報</h3>
+          <p>イベント告知・メンテ情報・日常の街の様子を発信中。</p>
+          <div style="margin-top:12px;">
+            <a class="btn-secondary"
+               href="https://x.com/soragra"
+               target="_blank" rel="noopener"
+               onclick="trackOutbound('soragra-x');">
+              X（旧Twitter）
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
 
   <!-- CONTACT -->
   <div id="contact" class="page">
