@@ -71,12 +71,61 @@ button { font-family: inherit; cursor: pointer; transition: all .3s; }
   width: 100%; height: 100%;
   pointer-events: none;
 }
-/* 星を一番奥 */
-#starfield{ z-index: -2; }
-/* 魔法使いを星より手前（ただしUIより奥） */
-#wizardfx{
-  z-index: -1;
-  filter: drop-shadow(0 0 12px rgba(170,160,255,.25));
+/* ===== Canvasを確実に見せる（z-indexマイナス禁止） ===== */
+#starfield { z-index: 0; }
+#wizardfx  { z-index: 1; }
+
+/* UIはCanvasより前 */
+nav, .page, footer{
+  position: relative;
+  z-index: 10;
+}
+
+/* ===== STAFF（写真＋名前） ===== */
+.staff-grid { margin-top: 8px; }
+
+.staff-card{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ← これで全部中央 */
+}
+
+.staff-photo{
+  display: block;
+  margin: 0 0 12px 8px;   /* ← 左だけ8px、中央寄せはしない */
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 14px rgba(120,120,255,0.35);
+}
+
+.staff-name{
+  margin-top: 14px;
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.staff-role{
+  margin-top: 6px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.05);
+  color: #d7d7ff;
+  font-weight: 800;
+}
+
+.staff-desc{ margin-top: 10px; color: #b0b0b0; }
+
+.staff-note{
+  margin-top: 8px;
+  color: #b0b0b0;
+  font-size: 0.95rem;
 }
 
 .floating { animation: float 6s ease-in-out infinite; }
@@ -301,4 +350,33 @@ footer .container { display:flex; justify-content: space-between; align-items:ce
   nav .container { flex-direction: column; }
   .join-grid { grid-template-columns: 1fr; }
   footer .container { flex-direction: column; }
+}
+
+/* =========================
+   SORAGRAだけレイアウトを広く使う
+   ========================= */
+#soragra .container{
+  max-width: 1400px; /* もっと広くしたいなら 1600px とかに */
+}
+
+/* ソラグラは2列ベース（PC） */
+#soragra .grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* “ソラグラとは” は横幅フル */
+#soragra .grid .full-width{
+  grid-column: 1 / -1;
+}
+
+/* スマホは1列（でも full-width はそのまま100%） */
+@media (max-width: 860px){
+  #soragra .grid{
+    grid-template-columns: 1fr;
+  }
+  #soragra .grid .full-width{
+    grid-column: 1 / -1;
+  }
 }
