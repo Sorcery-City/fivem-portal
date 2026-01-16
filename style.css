@@ -1,4 +1,4 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+** { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #000011 0%, #001122 50%, #16213e 100%);
@@ -352,31 +352,40 @@ footer .container { display:flex; justify-content: space-between; align-items:ce
   footer .container { flex-direction: column; }
 }
 
-/* =========================
-   SORAGRAだけレイアウトを広く使う
-   ========================= */
+/* ===== SORAGRA 専用（強制適用） ===== */
 #soragra .container{
-  max-width: 1400px; /* もっと広くしたいなら 1600px とかに */
+  max-width: 1400px !important;
 }
 
-/* ソラグラは2列ベース（PC） */
-#soragra .grid{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+.soragra-grid{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 22px !important;
 }
 
-/* “ソラグラとは” は横幅フル */
-#soragra .grid .full-width{
-  grid-column: 1 / -1;
+/* “ソラグラとは” を横幅フルに */
+.soragra-grid .full-width{
+  grid-column: 1 / -1 !important;
 }
 
-/* スマホは1列（でも full-width はそのまま100%） */
+/* スマホは1列 */
 @media (max-width: 860px){
-  #soragra .grid{
-    grid-template-columns: 1fr;
+  .soragra-grid{
+    grid-template-columns: 1fr !important;
   }
-  #soragra .grid .full-width{
-    grid-column: 1 / -1;
-  }
+}
+/* ===== SORAGRA タイトル画像を中央寄せ ===== */
+#soragra .soragra-title-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;  /* 横中央 */
+  margin-bottom: 28px;
+}
+
+#soragra img.soragra-title-img{
+  display: block;
+  margin: 0 auto;
+  width: min(520px, 92vw);
+  height: auto;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.45));
 }
