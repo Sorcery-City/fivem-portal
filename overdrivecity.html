@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Over Drive City | パートナーサーバー</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box} body{font-family:'Noto Sans JP',sans-serif;background:linear-gradient(135deg,#04030d 0%,#080618 50%,#0e0b24 100%);color:#e8e0ff;min-height:100vh;overflow-x:hidden} a{text-decoration:none;color:inherit} .starfield{position:fixed;inset:0;z-index:-1;pointer-events:none}
+    .container{max-width:1120px;margin:0 auto;padding:0 22px}.glass{background:rgba(15,10,46,.72);backdrop-filter:blur(14px);border:1px solid rgba(133,101,255,.24);border-radius:24px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+    nav{position:sticky;top:0;z-index:20;background:rgba(6,4,20,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(124,92,252,.18)} nav .container{display:flex;justify-content:space-between;align-items:center;padding:16px 22px}
+    .logo{font-family:'Cinzel',serif;font-weight:900;font-size:1.15rem;background:linear-gradient(135deg,#fff 0%,#b69cff 55%,#f0c060 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.btn{display:inline-flex;align-items:center;gap:10px;padding:11px 15px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05)}
+    .hero{padding:60px 0 24px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);font-weight:700;color:#d9cfff}.hero h1{font-size:clamp(2.2rem,5vw,3.3rem);font-weight:900;margin-top:16px}.hero p{max-width:760px;margin-top:16px;color:#c9bfdc;line-height:1.9}
+    .layout{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;padding:24px 0 70px}.panel{padding:28px}.panel h2{font-size:1.4rem;margin-bottom:14px}.desc{color:#e1d9f0;line-height:2;font-size:1.02rem}.list{display:grid;gap:14px;margin-top:18px}.item{padding:16px 18px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)} .item b{display:block;margin-bottom:6px;color:#fff}
+    .link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}.link-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);font-weight:800}.link-btn.primary{background:linear-gradient(135deg,#7c5cfc 0%,#5533cc 100%)}
+    .back-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.mini{color:#b7abcq;font-size:.96rem;line-height:1.8}
+    @media (max-width:880px){.layout{grid-template-columns:1fr}.link-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <canvas id="starfield" class="starfield"></canvas>
+  <nav><div class="container"><div class="logo">Sorcery City</div><div style="display:flex;gap:10px"><a class="btn" href="./index_partner_screenshot_style.html#soragra"><i class="fa-solid fa-arrow-left"></i>パートナー一覧へ</a><a class="btn" href="./index.html">トップへ</a></div></div></nav>
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow"><i class="fa-solid fa-bolt"></i> Partner Detail</div>
+      <h1>Over Drive City</h1>
+      <p>こちらは Over Drive City の個別ページです。一覧ページではカードのみを見せて、このページで説明と公式リンクを分けて見せる構成にしています。</p>
+    </section>
+    <section class="layout">
+      <article class="glass panel">
+        <h2>サーバー紹介</h2>
+        <p class="desc">提携先サーバーの紹介用ページです。ここはあとから正式な紹介文に差し替えやすいようにしてあります。現在は仮テキストなので、概要・世界観・特徴などを追加すればそのまま使えます。</p>
+        <div class="list">
+          <div class="item"><b>ジャンル</b>提携先サーバー紹介</div>
+          <div class="item"><b>特徴</b>一覧ページとは分離した個別詳細ページ</div>
+          <div class="item"><b>編集しやすさ</b>説明文とリンクをあとから簡単に差し替え可能</div>
+        </div>
+        <div class="back-row">
+          <a class="btn" href="./index_partner_screenshot_style.html#soragra"><i class="fa-solid fa-arrow-left"></i>一覧へ戻る</a>
+        </div>
+      </article>
+      <aside class="glass panel">
+        <h2>公式リンク</h2>
+        <p class="mini">ここは仮リンクのままなので、本番URLがあればそのまま差し替えて使えます。</p>
+        <div class="link-grid">
+          <a class="link-btn primary" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i>Discord</a>
+          <a class="link-btn" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i>X</a>
+          <a class="link-btn" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i>YouTube</a>
+          <a class="link-btn" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i>公式サイト</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script>
+    const c=document.getElementById('starfield'),x=c.getContext('2d');let stars=[];function resize(){c.width=innerWidth;c.height=innerHeight;stars=Array.from({length:Math.min(180,Math.floor(c.width*c.height/15000))},()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.8+.3,o:Math.random()*.8+.2,t:Math.random()*.03+.005}));}function draw(){x.clearRect(0,0,c.width,c.height);for(const s of stars){s.o+=((Math.random()-.5)*s.t);if(s.o<.15)s.o=.15;if(s.o>1)s.o=1;x.beginPath();x.arc(s.x,s.y,s.r,0,Math.PI*2);x.fillStyle=`rgba(255,255,255,${s.o})`;x.fill();}requestAnimationFrame(draw)}addEventListener('resize',resize);resize();draw();
+  </script>
+</body>
+</html>
